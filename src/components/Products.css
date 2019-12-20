@@ -1,0 +1,11 @@
+.products-section {
+    /* border: 1px solid black; */
+    background-color: rgb(226, 226, 226);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main-text {
+    text-align: center;
+    font-size: 2rem;
+}

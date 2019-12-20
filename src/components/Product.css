@@ -1,0 +1,10 @@
+.productDiv {
+    border: 3px solid rgb(146, 146, 146);
+    background-color: rgb(185, 185, 185);
+    border-radius: 10px;
+    margin: 10px;
+}
+
+img {
+    height: 200px;
+}

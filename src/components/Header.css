@@ -1,0 +1,50 @@
+header {
+    background-color: rgb(95, 95, 95);
+    position: relative;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.className {
+    display: inline;
+}
+
+.header-button {
+    padding: 10px 20px;
+    margin: 20px 10px;
+    border-radius: 4px;
+    border: 1px solid rgb(131, 131, 131);
+}
+
+.header-button:last-of-type {
+    margin-right: 50px;
+}
+
+.header-button:hover {
+    background-color: rgb(180, 180, 180);
+}
+
+.storeName {
+    font-size: 3rem;
+    color: #fff;
+}
+
+.cartItems {
+    color: #fff;
+    font-size: 1.2rem;
+    background-color: #000;
+    display: inline-block;
+    min-width: 35px;
+    padding: 2px 2px 4px 2px;
+    border-radius: 50vw;
+    border: 2px solid rgb(233, 233, 233);
+    position: absolute;
+    top: 5px;
+    right: 30px;
+}
