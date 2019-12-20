@@ -1,5 +1,9 @@
-/* .cart-section {
-    background-color: red;
+.cart-section {
+    background-color: rgb(226, 226, 226);
     height: 100vh;
-    width: 100vw;
-} */
+    /* padding-left: 30px; */
+    padding: 20px 30px 0 30px;
+    display: flex;
+    flex-direction: column;
+}
+

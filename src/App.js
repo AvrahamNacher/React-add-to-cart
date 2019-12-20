@@ -8,36 +8,21 @@ import Cart from './components/Cart'
 
 function App() {
   const [page, changePage] = useState("home")
-  const [cart, addToCart] = useState([]);
+  // const [page, changePage] = useState("cart")
+  // const [cart, addToCart] = useState([]);
+  const [cart, addToCart] = useState([
+    
+    {item: {id: 2, name: "ball", url: "https://images-na.ssl-images-amazon.com/images/I/81kTc0r6StL._SX425_.jpg"},
+    count: 3},
+    {item: {id: 3, name: "arrow arrow arrow", url: "https://5.imimg.com/data5/MS/KC/MY-64362/archery-arrow-bow-500x500.jpg"},
+    count: 1}
+  ]);
 
-  useEffect( () => {
-    console.log(cart);
-    let numItems = cart.length-1;
-    console.log("cartLength = " + numItems);
-    if (numItems > 0) {
-      console.log(">=2 items")
-      console.log(cart[numItems].item.id);
-      console.log("found at index " + cart.findIndex ( el => el.item.id === cart[numItems].item.id ) );
-      let newItemLocation = cart.findIndex ( el => el.item.id === cart[numItems].item.id );
-
-
-      if (newItemLocation !== numItems) {  // item already exists in the array
-        cart[newItemLocation].count++;
-        console.log("Incrementing Item Count to " + cart[newItemLocation].count);
-        cart.pop();
-        console.log("cart is now");
-        console.log(cart);
-
-      } else {  // item id is unique and only found in last position array (
-      }
-    }
-
-  },[cart]);
-
-  function addItem(item) {
+  function addItem(updatedCart) {
+    console.log("addItem calling addToCart");
     console.log(cart);
 
-    addToCart([...cart, {item: item, count: 1}]);
+    addToCart([...updatedCart]);
 
   }
 
@@ -47,8 +32,7 @@ function App() {
     
         return (
           <>
-            <Products newItem={ (item) => addItem(item)}/>
-            {/* <Products newItem={ (item) => addToCart([...cart, {item: item, count: 1} ])}/> */}
+            <Products newItem={ (updatedCart) => addItem(updatedCart)} cart={cart} />
           </>
         )
     }
@@ -58,7 +42,7 @@ function App() {
   
           return (
             <>
-              <Cart cartItems={cart}/>
+              <Cart cart={cart} newList={ (updatedCart) => addItem(updatedCart)}/>
             </>
           )
       }

@@ -11,7 +11,7 @@ function Products(props) {
             <div className="main-text">Select Your Products</div>
 
         <div className="products-section">
-            {productList.map( (el) => <Product key={el.id} itemInfo={el} newItem={props.newItem}/> )}
+            {productList.map( (el) => <Product key={el.id} itemInfo={el} cart={props.cart} newItem={props.newItem}/> )}
         </div>
         </div>
     );

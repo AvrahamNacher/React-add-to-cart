@@ -1,0 +1,30 @@
+.cart-item {
+    border: 3px solid rgb(146, 146, 146);
+    background-color: rgb(185, 185, 185);
+    border-radius: 10px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.cart-item img {
+    /* width: 100%; */
+    width: 100px;
+}
+
+.cart-item .item-name {
+    font-size:1.5rem;
+    margin-left: 40px;
+    min-width: 300px;;
+}
+
+.item-count button  {
+    font-weight: 700;
+    margin: 0 5px;
+}
+
+.remove-from-cart {
+    color: red;
+    margin-left: 25px !important;
+}
