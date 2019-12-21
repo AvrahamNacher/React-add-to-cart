@@ -1,6 +1,7 @@
 header {
     background-color: rgb(95, 95, 95);
-    position: relative;
+    position: sticky;
+    top: 0px;
 }
 
 nav {
@@ -9,10 +10,6 @@ nav {
     right: 0;
     display: flex;
     justify-content: flex-end;
-}
-
-.className {
-    display: inline;
 }
 
 .header-button {
@@ -35,7 +32,7 @@ nav {
     color: #fff;
 }
 
-.cartItems {
+.cart-item-count {
     color: #fff;
     font-size: 1.2rem;
     background-color: #000;

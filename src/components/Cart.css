@@ -1,9 +1,14 @@
 .cart-section {
     background-color: rgb(226, 226, 226);
-    height: 100vh;
+    min-height: 85vh;
     /* padding-left: 30px; */
     padding: 20px 30px 0 30px;
     display: flex;
     flex-direction: column;
+}
+
+.empty-cart-text {
+    font-size: 2.5rem;
+    margin-top: 40px;
 }
 

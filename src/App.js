@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header'
@@ -7,42 +7,31 @@ import Cart from './components/Cart'
 
 
 function App() {
-  const [page, changePage] = useState("home")
-  // const [page, changePage] = useState("cart")
-  // const [cart, addToCart] = useState([]);
-  const [cart, addToCart] = useState([
+  const [page, setPage] = useState("home")
+  // const [page, changePage] = useState("cart")  // FOR TESTING
+  const [cart, setCart] = useState([]);
+  // const [cart, addToCart] = useState([  // FOR TESTING
     
-    {item: {id: 2, name: "ball", url: "https://images-na.ssl-images-amazon.com/images/I/81kTc0r6StL._SX425_.jpg"},
-    count: 3},
-    {item: {id: 3, name: "arrow arrow arrow", url: "https://5.imimg.com/data5/MS/KC/MY-64362/archery-arrow-bow-500x500.jpg"},
-    count: 1}
-  ]);
-
-  function addItem(updatedCart) {
-    console.log("addItem calling addToCart");
-    console.log(cart);
-
-    addToCart([...updatedCart]);
-
-  }
+  //   {item: {id: 2, name: "ball", url: "https://images-na.ssl-images-amazon.com/images/I/81kTc0r6StL._SX425_.jpg"},
+  //   count: 3},
+  //   {item: {id: 3, name: "arrow", url: "https://5.imimg.com/data5/MS/KC/MY-64362/archery-arrow-bow-500x500.jpg"},
+  //   count: 1}
+  // ]);
 
   function generateHomePage() {
-    console.log("show home");
-    
-    
+    // console.log("show home");
         return (
           <>
-            <Products newItem={ (updatedCart) => addItem(updatedCart)} cart={cart} />
+            <Products newItem={ (updatedCart) => setCart([...updatedCart])} cart={cart} />
           </>
         )
     }
 
     function generateCartPage() {
-      console.log("show cart");
-  
+      // console.log("show cart");
           return (
             <>
-              <Cart cart={cart} newList={ (updatedCart) => addItem(updatedCart)}/>
+              <Cart cart={cart} newList={ (updatedCart) => setCart([...updatedCart])}/>
             </>
           )
       }
@@ -50,7 +39,7 @@ function App() {
   return (
     <div className="App">
       <Header 
-        page={(newPage) => changePage(newPage)} 
+        page={(newPage) => setPage(newPage)} 
         cart={cart}
       />
 
@@ -61,11 +50,6 @@ function App() {
       ? generateCartPage()
       : console.log("Message from App.js: page display error")
       }
-
-
-
-      {/* <CatsSection /> */}
-      {/* <Counter>4</Counter> */}
       
     </div>
   );
